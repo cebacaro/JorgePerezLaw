@@ -157,7 +157,7 @@ body {
   transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
-  animation: showContent .5s 1s linear 1 forwards;
+  animation: showContent .8s .2s linear 1 forwards;
 }
 @keyframes showContent{
   to{
@@ -235,7 +235,7 @@ body {
 
 .carousel.next .time,
 .carousel.prev .time{
-  animation: runningTime 3s linear 1 forwards;
+  animation: runningTime 0.7s linear 1 forwards;
 }
 @keyframes runningTime{
   from{ width: 100%}
@@ -374,7 +374,6 @@ body {
   html {
     scroll-behavior: smooth;
   }
-  
 
   
 }

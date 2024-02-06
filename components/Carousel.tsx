@@ -7,171 +7,133 @@ import img2 from "@/public/img2.png";
 import img3BW from "@/public/img3BW.png";
 import img4 from "@/public/img4.jpg";
 
+const carouselItems = [
+  {
+    imgSrc: img4,
+    alt: "carousel",
+    title: "IMMIGRATION",
+    topic: "SERVICES",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+  },
+  {
+    imgSrc: img2,
+    alt: "carousel",
+    title: "DESIGN SLIDER",
+    topic: "ANIMAL",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+  },
+  {
+    imgSrc: BW,
+    alt: "carousel",
+    title: "DESIGN SLIDER",
+    topic: "ANIMAL",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+  },
+  {
+    imgSrc: img3BW,
+    alt: "carousel",
+    title: "IMMIGRATION",
+    topic: "ANIMAL",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+  },
+];
+const thumbnailItems = [
+  {
+    imgSrc: img3BW,
+    alt: "carousel",
+    title: "Name Slider",
+    description: "Description",
+  },
+  {
+    imgSrc: BW,
+    alt: "carousel",
+    title: "Name Slider",
+    description: "Description",
+    priority: true, // Adding priority as an optional property
+  },
+  {
+    imgSrc: img2,
+    alt: "carousel",
+    title: "Name Slider",
+    description: "Description",
+  },
+  {
+    imgSrc: img4,
+    alt: "img4",
+    title: "Name Slider",
+    description: "Description",
+  },
+];
+
+
 const Page = () => {
   useEffect(() => {
-    
-      const showSlider = (type) => {
+    const showSlider = (type:'next'|'prev') => {
       const carouselDom = document.querySelector('.carousel');
-      const SliderDom = carouselDom ? carouselDom.querySelector('.list') : null;
-      const thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-      if (!SliderDom || !thumbnailBorderDom) {
+
+  if (!carouselDom) {
+    console.error('Carousel DOM element not found.');
+    return; 
+  }
+
+      const sliderDom = carouselDom?.querySelector('.list');
+      const thumbnailBorderDom = carouselDom?.querySelector('.thumbnail');
+      
+      if (!sliderDom || !thumbnailBorderDom) {
         console.error('Required DOM elements not found for slider functionality.');
         return;
       }
-      
-      const SliderItemsDom = SliderDom.querySelectorAll('.item');
+
+      const sliderItemsDom = sliderDom.querySelectorAll('.item');
       const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-      
+
       if (type === 'next') {
-        SliderDom.appendChild(SliderItemsDom[0]);
+        sliderDom.appendChild(sliderItemsDom[0]);
         thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        if (carouselDom) { // Check if carouselDom is not null before accessing its properties
-          carouselDom.classList.add('next');
-        }
       } else if (type === 'prev') {
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        sliderDom.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
         thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        if (carouselDom) { // Check if carouselDom is not null before accessing its properties
-          carouselDom.classList.add('prev');
-        }
       }
-      
-      // Resetting classes after animation
-      setTimeout(() => {
-        if (carouselDom) { // Ensure carouselDom is not null before trying to modify its classList
-          carouselDom.classList.remove('next', 'prev');
-        }
-      }, 3000);
-      
-     
-    
+
+      carouselDom.classList.add(type);
+      setTimeout(() => carouselDom.classList.remove('next', 'prev'), 3000);
     };
 
-  // Setup event listeners for next and previous buttons
-    const nextDom = document.getElementById('next');
-    const prevDom = document.getElementById('prev');
+    const setupButtonListeners = () => {
+      document.getElementById('next')?.addEventListener('click', () => showSlider('next'));
+      document.getElementById('prev')?.addEventListener('click', () => showSlider('prev'));
+    };
 
-    if (nextDom) {
-      nextDom.onclick = () => showSlider('next');
-    } else {
-      console.error('Next button DOM element is null. Make sure your element with ID "next" exists.');
-    }
-
-    if (prevDom) {
-      prevDom.onclick = () => showSlider('prev');
-    } else {
-      console.error('Previous button DOM element is null. Make sure your element with ID "prev" exists.');
-    }
+    setupButtonListeners();
   }, []);
 
   return (
-        <div className="carousel h-[100vh]">
-            {/* list item */}
-            <div className="list">
-            <div className="item">
-              <Image src={img4} 
-              alt="carousel" />
-              <div className="content">
-                <div className="title">IMMIGRATION</div>
-                <div className="topic">SERVICES</div>
-                <div className="des">
-                  {/* lorem 50 */}
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi,
-                  rem magnam nesciunt minima placeat, itaque eum neque officiis unde,
-                  eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut
-                  doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora
-                  at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-              
-              </div>
-            </div>
-            <div className="item">
-              <Image src={img2}
-              alt="carousel" />
-              <div className="content">
-               
-                <div className="title">DESIGN SLIDER</div>
-                <div className="topic">ANIMAL</div>
-                <div className="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi,
-                  rem magnam nesciunt minima placeat, itaque eum neque officiis unde,
-                  eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut
-                  doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora
-                  at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-                
-              </div>
-            </div>
-            <div className="item"
-            >
-              <Image src={BW}
-              alt="carousel" />
-              <div className="content">
-                <div className="title">DESIGN SLIDER</div>
-                <div className="topic">ANIMAL</div>
-                <div className="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi,
-                  rem magnam nesciunt minima placeat, itaque eum neque officiis unde,
-                  eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut
-                  doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora
-                  at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-               
-              </div>
-            </div>
-            <div className="item">
-              <Image src={img3BW}
-              alt="carousel"/>
-              <div className="content">
-                <div className="title">IMMIGRATION</div>
-                <div className="topic">ANIMAL</div>
-                <div className="des">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi,
-                  rem magnam nesciunt minima placeat, itaque eum neque officiis unde,
-                  eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut
-                  doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora
-                  at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                </div>
-             
-              </div>
-            </div>
+    <div className="carousel h-[100vh]">
+    <div className="list">
+      {carouselItems.map((item, index) => (
+        <div key={index} className="item">
+          <Image src={item.imgSrc} alt={item.alt} />
+          <div className="content">
+            <div className="title">{item.title}</div>
+            <div className="topic">{item.topic}</div>
+            <div className="des">{item.description}</div>
           </div>
+        </div>
+      ))}
+    </div>
+ 
           {/* // next prev// */}
           <div className="thumbnail">
-            <div className="item">
-              <Image src={img3BW}
-              alt="carousel"/>
-              <div className="content">
-                <div className="title">Name Slider</div>
-                <div className="description">Description</div>
-              </div>
-            </div>
-            <div className="item"
-            > 
-              <Image src={BW}
-              alt="carousel"
-              priority/>
-              <div className="content">
-                <div className="title">Name Slider</div>
-                <div className="description">Description</div>
-              </div>
-            </div>
-            <div className="item">
-              <Image src={img2}alt="carousel"/>
-              <div className="content">
-                <div className="title">Name Slider</div>
-                <div className="description">Description</div>
-              </div>
-            </div>
-            <div className="item">
-              <Image src={img4} 
-              alt="img4"/>
-              <div className="content">
-                <div className="title">Name Slider</div>
-                <div className="description">Description</div>
-              </div>
-            </div>
-          </div>
+    {thumbnailItems.map((item, index) => (
+      <div key={index} className="item">
+        <Image src={item.imgSrc} alt={item.alt} priority={item.priority || false} />
+        <div className="content">
+          <div className="title">{item.title}</div>
+          <div className="description">{item.description}</div>
+        </div>
+      </div>
+    ))}
+  </div>
           {/* next prev */}
           <div className="arrows">
             <button id="prev">&lt;</button>
