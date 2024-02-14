@@ -45,7 +45,7 @@ const page = () => {
           className=" my-2 rounded-md    w-auto" //
         />
       </div>
-      <Separator className="mt-5 h-[40rem]" orientation="vertical" />
+      <Separator className="mt-5 h-[80%] self-center " orientation="vertical" />
       {/* Full viewport height and flex column */}
       <div className=" flex flex-col w-1/2 h-full relative p-2">
         {" "}

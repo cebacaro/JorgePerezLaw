@@ -19,7 +19,7 @@ const Navbar = () => {
   const { setTheme } = useTheme();
   return (
     <>
-      <header className="flex justify-between items-center px-4 w-full">
+      <header className="flex justify-between items-center px-4 w-full ">
         <div className="flex justify-center items-center py-1">
           <a href="#home" id="logoLink">
             <Image
@@ -72,9 +72,9 @@ const Navbar = () => {
           <Menu className="h-6 w-6 md:hidden justify-center items-center mr-4" />{" "}
         </div>
       </header>
-      <div>
+      {/* <div>
         <Separator className="my-2" />
-      </div>
+      </div> */}
     </>
   );
 };

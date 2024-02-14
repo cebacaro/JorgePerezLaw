@@ -19,7 +19,7 @@ body {
 .carousel{
   height: 100vh;
   margin-top: -63px;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -30,7 +30,7 @@ body {
   inset: 0 0 0 0;
 }
 .carousel .list .item img{
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
 }
@@ -79,10 +79,10 @@ body {
   color: #eee;
 }
 /* thumbail */
-.thumbnail{
+.thumbnail {
   position: absolute;
-  bottom: 50px;
-  left: 50%;
+  bottom: 50px; /* Keep as is for bottom positioning */
+  right: 0; /* Align to the right side */
   width: max-content;
   z-index: 100;
   display: flex;
@@ -157,7 +157,7 @@ body {
   transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
-  animation: showContent .8s .2s linear 1 forwards;
+  animation: showContent .2s .2s linear 1 forwards;
 }
 @keyframes showContent{
   to{
@@ -167,16 +167,16 @@ body {
   }
 }
 .carousel .list .item:nth-child(1) .content .title{
-  animation-delay: 1.2s!important;
+  animation-delay: 1s!important;
 }
 .carousel .list .item:nth-child(1) .content .topic{
-  animation-delay: 1.4s!important;
+  animation-delay: 1.2s!important;
 }
 .carousel .list .item:nth-child(1) .content .des{
-  animation-delay: 1.6s!important;
+  animation-delay: 1.4s!important;
 }
 .carousel .list .item:nth-child(1) .content .buttons{
-  animation-delay: 1.8s!important;
+  animation-delay: 1.6s!important;
 }
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img{
@@ -200,7 +200,7 @@ body {
 
 .carousel.next .thumbnail .item:nth-last-child(1){
   overflow: hidden;
-  animation: showThumbnail .5s linear 1 forwards;
+  animation: showThumbnail .5s linear .5s forwards;
 }
 .carousel.prev .list .item img{
   z-index: 100;
