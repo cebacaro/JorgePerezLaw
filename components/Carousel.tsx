@@ -94,11 +94,11 @@ const Page = () => {
           {/* Directly render the current item using currentIndex */}
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 1, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5 }}
-            className="item"
+            initial={{ opacity: 0, y: 50, filter: 'blur(20px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, y: 50, filter: 'blur(20px)' }}
+            transition={{ duration: 0.3, delay: 0.2,  }}
+            className="item easy-in"
             style={{ position: 'absolute', inset: '0 0 0 0' }}
           >
                <Image 
@@ -106,7 +106,7 @@ const Page = () => {
               alt={carouselItems[currentIndex].alt}
               priority={carouselItems[currentIndex].priority} 
               fill 
-            
+                
             />
             <div className="content">
               <div className="title">{carouselItems[currentIndex].title}</div>
