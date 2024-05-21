@@ -1,7 +1,7 @@
 "useClient";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import BW from "@/public/B&W.jpg";
 import img2 from "@/public/img2.png";
@@ -14,7 +14,8 @@ const carouselItems = [
     alt: "carousel",
     title: "IMMIGRATION",
     topic: "SERVICES",
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
     priority: true,
   },
   {
@@ -22,7 +23,8 @@ const carouselItems = [
     alt: "carousel",
     title: "DESIGN SLIDER",
     topic: "ANIMAL",
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
     priority: false,
   },
   {
@@ -30,7 +32,8 @@ const carouselItems = [
     alt: "carousel",
     title: "DESIGN SLIDER",
     topic: "ANIMAL",
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
     priority: false,
   },
   {
@@ -73,81 +76,97 @@ const thumbnailItems = [
   },
 ];
 
-
 const Page = () => {
-  
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, []);
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + carouselItems.length) % carouselItems.length);
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + carouselItems.length) % carouselItems.length
+    );
   };
- 
-  
 
   return (
     <div className="carousel h-full">
-  <div className="list">
-        <AnimatePresence mode='wait'>
-          {/* Directly render the current item using currentIndex */}
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, y: 50, filter: 'blur(20px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: 50, filter: 'blur(20px)' }}
-            transition={{ duration: 0.3, delay: 0.2,  }}
-            className="item easy-in"
-            style={{ position: 'absolute', inset: '0 0 0 0' }}
-          >
-               <Image 
-              src={carouselItems[currentIndex].imgSrc} 
-              alt={carouselItems[currentIndex].alt}
-              priority={carouselItems[currentIndex].priority} 
-              fill 
-                
-            />
-            <div className="content">
-              <div className="title">{carouselItems[currentIndex].title}</div>
-              <div className="topic">{carouselItems[currentIndex].topic}</div>
-              <div className="des">{carouselItems[currentIndex].description}</div>
-            </div>
-          </motion.div>
+      <div className="list">
+        <AnimatePresence initial={false} mode="wait">
+          {carouselItems.length > 0 && (
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 50, filter: "blur(20px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: 50, filter: "blur(20px)" }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="item easy-in"
+              style={{ position: "absolute", inset: "0 0 0 0" }}
+            >
+              <Image
+                src={carouselItems[currentIndex].imgSrc}
+                alt={carouselItems[currentIndex].alt}
+                priority={carouselItems[currentIndex].priority}
+                loading={
+                  carouselItems[currentIndex].priority ? "eager" : "lazy"
+                }
+                layout="fill"
+                objectFit="cover"
+              />
+              <div className="content">
+                <div className="title">{carouselItems[currentIndex].title}</div>
+                <div className="topic">{carouselItems[currentIndex].topic}</div>
+                <div className="des">
+                  {carouselItems[currentIndex].description}
+                </div>
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
- 
-          {/* // next prev// */}
-          <div className="thumbnail z-0">
-  {thumbnailItems.map((item, index) => (
-    <motion.div 
-      key={index}
-      className="item"
-      animate={{
-        opacity: index === currentIndex ? 1 : 0.5, 
-        scale: index === currentIndex ? 1.1 : 1, 
-      }}
-      transition={{ duration: 0.5 }} 
-    >
-      <Image src={item.imgSrc} alt={item.alt} priority={item.priority || false} />
-      <div className="content">
-        <div className="title">{item.title}</div>
-        <div className="description">{item.description}</div>
+
+      {/* // next prev// */}
+      <div className="thumbnail z-0">
+        {thumbnailItems.map((item, index) => (
+          <motion.div
+            key={index}
+            className="item"
+            animate={{
+              opacity: index === currentIndex ? 1 : 0.5,
+              scale: index === currentIndex ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src={item.imgSrc}
+              alt={item.alt}
+              priority={item.priority || false}
+            />
+            <div className="content">
+              <div className="title">{item.title}</div>
+              <div className="description">{item.description}</div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </motion.div>
-  ))}
-</div>
-          
-          <div className="arrows">
-            <button onClick={handlePrev} id="prev">&lt;</button>
-            <button onClick={handleNext} id="next">&gt;</button>
-          </div>
-         
-          <div className="time"></div>
-        </div>
-      );
+
+      <div className="arrows">
+        <button onClick={handlePrev} id="prev">
+          &lt;
+        </button>
+        <button onClick={handleNext} id="next">
+          &gt;
+        </button>
+      </div>
+
+      <div className="time"></div>
+    </div>
+  );
 };
 
 export default Page;
-
-

@@ -15,7 +15,13 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        screens: {
+          'sm': '640px', // Targeting small devices by default
+          'md': '768px', // Specifically for 13-inch Mac screens
+          'lg': '1024px', // For larger than 13-inch Mac screens
+          'xl': '1280px', // Your custom breakpoint
+        },
+      
       },
     },
     extend: {
