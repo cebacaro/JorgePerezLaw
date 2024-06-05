@@ -5,7 +5,7 @@ const reviews = [
   {
     author_name: "Luis Perez",
     rating: 5,
-    text: " Jorge Perez has been an absolute blessing to me and my family, he made our very difficult long process started with another lawyer super fast and a breeze! He’s my go to lawyer for all legal needs! 20 out of 10 best lawyer in NOLA! ",
+    text: "Jorge Perez has been an absolute blessing to me and my family, he made our very difficult long process started with another lawyer super fast and a breeze! He’s my go to lawyer for all legal needs! 20 out of 10 best lawyer in NOLA! ",
   },
   {
     author_name: "Muhammad Saeed",
@@ -15,17 +15,17 @@ const reviews = [
   {
     author_name: "Cristhian Buezo",
     rating: 5,
-    text: " Very helpful throughout the entire process. Definitely helps ease your mind since everything can be so stressful. Immediately jumped on the case when I presented it to him. Jorge took charge as soon as I spoke with him. 10/10 would recommend.",
+    text: "Very helpful throughout the entire process. Definitely helps ease your mind since everything can be so stressful. Immediately jumped on the case when I presented it to him. Jorge took charge as soon as I spoke with him. 10/10 would recommend.",
   },
   {
     author_name: "LeRoy Peralta",
     rating: 5,
-    text: " Jorge is very dedicated to helping you and is detailed oriented to your case. Everything that he discusses with you about your case, he makes it happen. I am very please with all the results of my case thus far. He always answers my calls and text messages to all questions that I may have concerning doctors visits, doctors results of XRays, MRI 's, and plan of action to get me healthy again prior to being involved in an automobile accident . Jorge Perez is a phenomenal attorney who has your best interest first... thank you for Everything! ",
+    text: "Jorge is very dedicated to helping you and is detailed oriented to your case. Everything that he discusses with you about your case, he makes it happen. I am very please with all the results of my case thus far. He always answers my calls and text messages to all questions that I may have concerning doctors visits, doctors results of XRays, MRI 's, and plan of action to get me healthy again prior to being involved in an automobile accident . Jorge Perez is a phenomenal attorney who has your best interest first... thank you for Everything! ",
   },
   {
     author_name: "Clay Vallejo",
     rating: 5,
-    text: " Lawyer Jorge Perez is an excellent professional. He helped me greatly with my case and when I was under lots of stress to handle my car accident on my own. He is a very dedicated professional. ",
+    text: "Lawyer Jorge Perez is an excellent professional. He helped me greatly with my case and when I was under lots of stress to handle my car accident on my own. He is a very dedicated professional. ",
   },
 ];
 
@@ -56,7 +56,7 @@ const Page = () => {
             <div key={index} className="p-4 rounded-lg ">
               <p>{review.author_name}: </p>
               <p className="text-yellow-400">{renderStars(review.rating)}</p>
-              <p className="font-raleway">" {review.text} "</p>
+              <p className="font-raleway"> {review.text} </p>
             </div>
           ))}
         </div>
