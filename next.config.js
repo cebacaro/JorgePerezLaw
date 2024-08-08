@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    ignoreDuringBuild: true,
+    // Corrected key
+    ignoreDuringBuilds: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Apply fixes for specific issues like recursive requires

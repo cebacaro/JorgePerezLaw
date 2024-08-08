@@ -1,13 +1,12 @@
 "use client";
 
-
 import About from "./about/page";
 import Services from "./services/page";
 import Contact from "./contact/page";
 import Image from "next/image";
 import Attorney from "./attorney/page";
 import hero from "@/public/img1.png";
-import logo from "@/public/logoT.png"
+import Logo from "@/public/LogoNew.png";
 
 export default function Home() {
   return (
@@ -21,11 +20,18 @@ export default function Home() {
           />
         </div>
 
-        <div className="absolute left-0 z-10 flex flex-col w-full h-full justify-center p-48 bg-slate-800/50 gap-6 scroll-smooth">
-          <Image src={logo} width={600} height={800} alt="logo" 
-         />
-          <h1 className="text-white font-lora tracking-[2px] ">DEFENDING YOUR RIGHTS AND INTERESTS</h1>
-          <p className="font-raleway font-light block lg:w-[40%] text-white text-wrap ">
+        <div className="absolute left-0 z-10 flex flex-col w-full h-full justify-center lg:p-48 p-8 bg-slate-800/50 gap-6 scroll-smooth">
+          <Image
+            src={Logo}
+            width={600}
+            height={800}
+            alt="logo"
+            className="mx-auto lg:mx-0"
+          />
+          <h1 className="text-white font-lora tracking-[2px] text-center lg:text-left">
+            DEFENDING YOUR RIGHTS AND INTERESTS
+          </h1>
+          <p className="font-raleway font-light text-white text-center lg:text-left lg:w-[40%]">
             Jorge Perez Law Firm, LLC is a law firm based in New Orleans metro
             area, LA with an emphasis in Personal Injury and Accidents, Civil
             and Commercial Litigation, Immigration Defense, and Taxation

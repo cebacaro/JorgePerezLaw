@@ -37,13 +37,14 @@ const Page = () => {
           className="absolute z-0"
         />
       </div>
-      <div className="inset-0 flex flex-col items-center justify-center backdrop-filter backdrop-blur-md bg-opacity-20 bg-black/50 z-10 min-h-screen  absolute ">
-        <p className="md:text-center text-sm lg:text-lg font-extralight text-justify justify-center lg:m-8 items-center font-raleway">
-          We are always ready to help you. There are many ways to contact us.
-          You may drop us a line, give us a call or send an email, choose what
-          suits you the most.
+      <div className="inset-0 flex flex-col  items-center justify-center backdrop-filter backdrop-blur-md bg-opacity-20 bg-black/50 z-10 min-h-screen  absolute ">
+        <p className="md:text-center text-center tracking-widest font-lora text-[#ceb475] uppercase p-4 text-sm lg:text-lg font-extralight justify-center lg:m-8 lg:max-w-[50%] items-center ">
+          We are always ready to help you. <br /> There are many ways to contact
+          us. <br /> You may drop us a line,
+          <br /> give us a call or send an email,
+          <br /> choose what suits you the most.
         </p>
-        <div className="flex flex-col lg:gap-8 items-center font-raleway font-extralight">
+        <div className="flex flex-col lg:flex-row lg:gap-8 items-center font-raleway font-extralight">
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -70,7 +71,7 @@ const Page = () => {
             </Card>
           ))}
         </div>
-        <div className="mt-4 md:mt-8 flex justify-around">
+        <div className="mt-4 md:mt-8 flex justify-around flex-col">
           <p className="text-center justify-center items-center">
             Tel: 123-4567-890
           </p>
