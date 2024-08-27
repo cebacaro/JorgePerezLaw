@@ -37,10 +37,17 @@ const Navbar = () => {
               <Link href="#about">About Us</Link>
             </Button>
             <Button variant="ghost" asChild>
+              <Link href="#attorney">Attorney</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="#resources">Resources</Link>
+            </Button>
+
+            <Button variant="ghost" asChild>
               <Link href="#contact">Contact Us</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link href="#attorney">Attorney</Link>
+              <Link href="#reviews">Reviews</Link>
             </Button>
           </div>
           <button
@@ -71,10 +78,16 @@ const Navbar = () => {
             <Link href="#about">About Us</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
+            <Link href="#attorney">Attorney</Link>
+          </Button>
+          <Button variant="ghost" asChild onClick={toggleMenu}>
             <Link href="#contact">Contact Us</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#attorney">Attorney</Link>
+            <Link href="#resources">Resources</Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link href="#reviews">Reviews</Link>
           </Button>
         </nav>
       </div>

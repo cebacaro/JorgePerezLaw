@@ -5,7 +5,9 @@ import Services from "./services/page";
 import Contact from "./contact/page";
 import Image from "next/image";
 import Attorney from "./attorney/page";
+import Reviews from "./reviews/page";
 import hero from "@/public/img1.png";
+import Resources from "./resources/page";
 import Logo from "@/public/LogoNew.png";
 
 export default function Home() {
@@ -28,7 +30,7 @@ export default function Home() {
             alt="logo"
             className="mx-auto lg:mx-0"
           />
-          <h1 className="text-white font-lora tracking-[2px] text-center lg:text-left">
+          <h1 className="text-white text-1xl font-lora font-bold tracking-[2px] text-center lg:text-left">
             DEFENDING YOUR RIGHTS AND INTERESTS
           </h1>
           <p className="font-raleway font-light text-white text-center lg:text-left lg:w-[40%]">
@@ -45,11 +47,17 @@ export default function Home() {
       <section id="about" className="relative min-h-screen pt-16">
         <About />
       </section>
+      <section id="attorney" className="relative min-h-screen pt-16">
+        <Attorney />
+      </section>
+      <section id="resources" className="relative min-h-screen pt-16">
+        <Resources />
+      </section>
       <section id="contact" className="relative min-h-screen pt-16">
         <Contact />
       </section>
-      <section id="attorney" className="relative min-h-screen pt-16">
-        <Attorney />
+      <section id="reviews" className="relative min-h-screen pt-16">
+        <Reviews />
       </section>
     </main>
   );

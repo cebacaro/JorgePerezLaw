@@ -32,6 +32,8 @@ module.exports = {
         source: ["Source Sans 3", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
         lora: ["Lora", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
        
       },
       colors: {

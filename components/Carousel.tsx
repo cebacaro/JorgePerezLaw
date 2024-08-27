@@ -15,7 +15,7 @@ const carouselItems = [
     title: "PERSONAL ",
     topic: "INJURY",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+      "Our firm provides compassionate and assertive representation for victims of personal injury and accidents. We fight tirelessly to ensure our clients receive the justice and maximum compensation they deserve, guiding them through every step of the legal process.",
     priority: true,
   },
   {
@@ -24,7 +24,7 @@ const carouselItems = [
     title: "CIVIL & COMMERCIAL",
     topic: "LITIGATION",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+      "With extensive experience in civil and commercial litigation, we offer strategic legal services designed to resolve disputes effectively. Our approach is focused on protecting your rights and business interests, whether through negotiation or in the courtroom.",
     priority: false,
   },
   {
@@ -33,7 +33,7 @@ const carouselItems = [
     title: "IMMIGRATION",
     topic: "DEFENSE",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+      "We are committed to providing robust defense and personalized support in complex immigration cases. Whether facing deportation or seeking residency, we help our clients navigate the intricate U.S. immigration system to safeguard their future.",
     priority: false,
   },
   {
@@ -41,7 +41,8 @@ const carouselItems = [
     alt: "carousel",
     title: "TAXATION",
     topic: "BUSSINES & PERSONAL",
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+    description:
+      "Our firm offers expert legal advice on all taxation matters, from compliance to dispute resolution. We work closely with clients to optimize their tax strategies, ensuring they meet their obligations while maximizing financial efficiency.",
     priority: false,
   },
 ];
@@ -70,15 +71,15 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="carousel h-full relative">
-      <div className="list">
+    <div className="carousel h-full w-full relative">
+      <div className="list ">
         <AnimatePresence initial={false} mode="wait">
           {carouselItems.length > 0 && (
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 50, filter: "blur(20px)" }}
+              initial={{ opacity: 0, y: -50, filter: "blur(20px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: 50, filter: "blur(20px)" }}
+              exit={{ opacity: 0, y: -50, filter: "blur(20px)" }}
               transition={{ duration: 0.3, delay: 0.2 }}
               className="item easy-in"
               style={{ position: "absolute", inset: "0 0 0 0" }}
@@ -90,17 +91,19 @@ const Page = () => {
                 loading={
                   carouselItems[currentIndex].priority ? "eager" : "lazy"
                 }
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
+                className="z-0"
               />
-              <div className="content  lg:p-0 text-xs lg:text-lg text-center lg:text-left mx-auto lg:mx-0 lg:w-[50%]">
-                <div className="title text-[12px] lg:text-4xl font-bold">
+              <div className="absolute inset-0 bg-black/25 z-10"></div>
+              <div className="content lg:p-0 text-[10px] lg:text-lg text-left lg:mx-0 z-20  ">
+                <div className="title text-sm lg:text-4xl font-bold text-gray-300">
                   {carouselItems[currentIndex].title}
                 </div>
-                <div className="topic text-lg lg:text-2xl mt-2">
+                <div className="topic text-base lg:text-2xl mt-2">
                   {carouselItems[currentIndex].topic}
                 </div>
-                <div className="des text-sm lg:text-lg mt-4">
+                <div className="des text-base lg:text-lg mt-4 text-gray-300">
                   {carouselItems[currentIndex].description}
                 </div>
               </div>
