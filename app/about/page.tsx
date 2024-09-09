@@ -17,7 +17,7 @@ const page = () => {
         <h2 className="font-lora w-[79vw] text-[#ceb475] uppercase lg:text-[30px] md:p-4 text-center tracking-wider ">
           We dedicate ourselves to being more than legal <br /> representatives
         </h2>
-        <div className="lg:flex  gap-5 m-2 max-w-[70%] font-raleway font-extralight  lg:text-[23px]">
+        <div className="lg:flex  gap-5 m-2 max-w-[70%] font-raleway font-extralight  lg:text-2xl">
           <p className="p-4">
             Jorge Perez Law Firm is a firm serving New Orleans metro area
             residents and businesses. Since 2011, we have provided strategic

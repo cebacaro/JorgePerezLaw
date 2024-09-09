@@ -18,11 +18,11 @@ export default function Home() {
           <Image
             src={hero}
             alt="Picture of the author"
-            className="object-cover w-full h-full" //
+            className="object-cover w-full h-full"
           />
         </div>
 
-        <div className="absolute left-0 z-10 flex flex-col w-full h-full justify-center lg:p-48 p-8 bg-slate-800/50 gap-6 scroll-smooth">
+        <div className="absolute left-0 z-10 flex flex-col w-full h-full justify-center lg:p-48 p-8 bg-neutral-800/65 inset-0 gap-6 scroll-smooth">
           <Image
             src={Logo}
             width={600}
@@ -30,16 +30,17 @@ export default function Home() {
             alt="logo"
             className="mx-auto lg:mx-0"
           />
-          <h1 className="text-white text-1xl font-lora font-bold tracking-[2px] text-center lg:text-left">
+          <h1 className="text-1xl lg:text-2xl text-[#ceb475] font-lora font-bold tracking-[2px] text-center lg:text-left">
             DEFENDING YOUR RIGHTS AND INTERESTS
           </h1>
-          <p className="font-raleway font-light text-white text-center lg:text-left lg:w-[40%]">
+          <p className="font-raleway font-light lg:text-2xl text-white text-center lg:text-left lg:w-[40%]">
             Jorge Perez Law Firm, LLC is a law firm based in New Orleans metro
             area, LA with an emphasis in Personal Injury and Accidents, Civil
-            and Commercial Litigation, Immigration Defense, and Taxation
+            and Commercial Litigation, Immigration Defense, and Taxation.
           </p>
         </div>
       </section>
+
       <div className="relative -mt-16 h-16 invisible"></div>
       <section id="services" className="relative min-h-screen pt-16">
         <Services />

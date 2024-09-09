@@ -11,16 +11,18 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="dark"
       enableSystem
       disableTransitionOnChange
       {...props}
     >
       {" "}
       {/* This is the outer provider for theme handling */}
-       <NextUIProvider>  {/* This is the inner provider for NextUI */}
-      {children}
-       </NextUIProvider> 
+      <NextUIProvider>
+        {" "}
+        {/* This is the inner provider for NextUI */}
+        {children}
+      </NextUIProvider>
     </NextThemesProvider>
   );
 }

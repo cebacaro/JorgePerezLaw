@@ -15,7 +15,7 @@ const page = () => {
           JORGE PEREZ
         </h1>
 
-        <p className="lg:flex  gap-5 m-2 max-w-[70%] text-balance  font-raleway font-extralight  lg:text-[23px]">
+        <p className="lg:flex  gap-5 m-2 max-w-[70%] text-balance  font-raleway font-extralight  lg:text-2xl">
           Born in Puerto Rico, Jorge Perez is an Attorney and Certified Public
           Accountant. He graduated Magna Cum Laude from the University of Puerto
           Rico, earning a B.S.B.A. in Accounting and earned his law degree from

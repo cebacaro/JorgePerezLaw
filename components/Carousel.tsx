@@ -65,7 +65,7 @@ const Page = () => {
     setCurrentIndex(0);
     const interval = setInterval(() => {
       handleNext();
-    }, 10000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, []);
@@ -97,13 +97,13 @@ const Page = () => {
               />
               <div className="absolute inset-0 bg-black/25 z-10"></div>
               <div className="content lg:p-0 text-[10px] lg:text-lg text-left lg:mx-0 z-20  ">
-                <div className="title text-sm lg:text-4xl font-bold text-gray-300">
+                <div className="title text-sm lg:text-3xl font-bold text-gray-300">
                   {carouselItems[currentIndex].title}
                 </div>
                 <div className="topic text-base lg:text-2xl mt-2">
                   {carouselItems[currentIndex].topic}
                 </div>
-                <div className="des text-base lg:text-lg mt-4 text-gray-300">
+                <div className="des text-base lg:text-2xl font-raleway mt-4 text-gray-300">
                   {carouselItems[currentIndex].description}
                 </div>
               </div>

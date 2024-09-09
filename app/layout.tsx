@@ -1,10 +1,14 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Jorge Perez",
   description: "Lawyer website",
 };
@@ -14,17 +18,48 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      window.gtag("config", "G-WSDKW650C9", {
+        page_path: url,
+      });
+    };
+
+    const gtagScript = document.createElement("script");
+    gtagScript.async = true;
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=G-WSDKW650C9`;
+    document.head.appendChild(gtagScript);
+
+    const inlineScript = document.createElement("script");
+    inlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WSDKW650C9');
+    `;
+    document.head.appendChild(inlineScript);
+
+    const handleComplete = () => handleRouteChange(window.location.pathname);
+
+    router.push(window.location.pathname);
+    window.addEventListener("popstate", handleComplete);
+
+    return () => {
+      window.removeEventListener("popstate", handleComplete);
+    };
+  }, [router]);
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen w-full scrollbar-hide scroll-smooth ">
+      <body className="flex flex-col min-h-screen w-full scrollbar-hide scroll-smooth">
         <Providers>
           <div className="flex flex-col min-h-screen">
-            {/* Navbar */}
             <div className="fixed top-0 z-20 w-full">
               <Navbar />
             </div>
 
-            {/* Main Content */}
             <div
               className="flex-grow"
               style={{ height: "calc(100vh - navbarHeight - footerHeight)" }}
@@ -32,7 +67,6 @@ export default function RootLayout({
               {children}
             </div>
 
-            {/* Footer */}
             <div className="flex justify-center">
               <Footer />
             </div>

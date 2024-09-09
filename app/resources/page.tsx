@@ -31,19 +31,19 @@ const cards = [
 const Page = () => {
   return (
     <div className="relative w-full h-screen flex justify-center items-center  mt-8">
-      <div className="flex flex-col  lg:gap-8 items-center justify-center gap-4 w-full absolute top-0">
-        <h1 className="text-2xl bold text-[#ceb475] lg:m-4 m-4">
+      <div className="flex flex-col  lg:gap-4 items-center justify-center gap-4 w-full absolute top-0">
+        <h1 className="text-4xl font-lora font-normal lg:tracking-wider text-[#ceb475] lg:m-4 m-4">
           USEFUL RESOURCES{" "}
         </h1>
         {cards.map((card, index) => (
           <Card
             key={index}
-            className="flex flex-col justify-between items-center bg-opacity-0 border shadow-md shadow-[#ceb475]/50 rounded p-4 w-[80vw] lg:w-2/5 lg:h-[200px] text-justify"
+            className="flex flex-col justify-between items-center bg-opacity-0 border shadow-md shadow-[#ceb475]/50 rounded p-2 w-[80vw] lg:w-2/5 lg:h-[190px] text-justify"
           >
-            <CardHeader className="flex justify-center items-center w-full text-2xl md:text-lg text-[#ceb475]">
+            <CardHeader className="flex justify-center items-center w-full text-2xl md:text-lg font-bold text-[#ceb475] lg:text-2xl">
               <h1>{card.title}</h1>
             </CardHeader>
-            <CardBody className="text-center justify-center md:text-sm p-1 text-default-500">
+            <CardBody className="text-center justify-center md:text-sm p-1 text-default-500 lg:text-[20px] font-raleway">
               <p>{card.description}</p>
             </CardBody>
             <CardFooter className="flex justify-center pb-0 text-[10px]">

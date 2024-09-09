@@ -20,46 +20,48 @@ const Navbar = () => {
   return (
     <>
       <header className="flex justify-between items-center px-4 w-full ">
-        <div className="flex justify-center items-center py-1">
-          <a href="#home" id="logoLink" className="block h-auto w-auto m-1">
-            <Image src="/logo.png" alt="logo" width={40} height={40} />
-          </a>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="hidden md:block mr-4">
-            <Button variant="ghost" asChild>
-              <Link href="#home">Home</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="#services">Practice Areas</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="#about">About Us</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="#attorney">Attorney</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="#resources">Resources</Link>
-            </Button>
-
-            <Button variant="ghost" asChild>
-              <Link href="#contact">Contact Us</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="#reviews">Reviews</Link>
-            </Button>
+        <div className="flex w-screen justify-between">
+          <div className="justify-center items-center py-1 flex-1 m-2">
+            <a href="#home" id="logoLink" className="block h-auto w-auto ">
+              <Image src="/logo.png" alt="logo" width={60} height={60} />
+            </a>
           </div>
-          <button
-            onClick={toggleMenu}
-            className="md:hidden flex justify-center items-center mr-4"
-          >
-            {menuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          <div className="flex justify-end items-center  ml-0">
+            <div className="hidden md:block mr-4">
+              <Button variant="ghost" asChild>
+                <Link href="#home">Home</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="#services">Practice Areas</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="#about">About Us</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="#attorney">Attorney</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="#resources">Resources</Link>
+              </Button>
+
+              <Button variant="ghost" asChild>
+                <Link href="#contact">Contact Us</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="#reviews">Reviews</Link>
+              </Button>
+            </div>
+            <button
+              onClick={toggleMenu}
+              className="md:hidden flex justify-center items-center mr-4"
+            >
+              {menuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </header>
       <div
@@ -81,10 +83,10 @@ const Navbar = () => {
             <Link href="#attorney">Attorney</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#contact">Contact Us</Link>
+            <Link href="#resources">Resources</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#resources">Resources</Link>
+            <Link href="#contact">Contact Us</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="#reviews">Reviews</Link>
