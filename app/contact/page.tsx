@@ -32,12 +32,11 @@ const Page = () => {
           className="absolute z-0"
         />
       </div>
-      <div className="inset-0 flex flex-col  items-center justify-center backdrop-filter backdrop-blur-md bg-opacity-20 bg-black/50 z-10 min-h-screen  absolute ">
-        <div className="flex w-screen h-auto items-center justify-center lg:top-0">
+      <div className="inset-0 flex flex-col  items-center  backdrop-filter backdrop-blur-md bg-opacity-20 bg-black/50 z-10 min-h-screen  absolute ">
+        <div className="flex w-screen h-auto items-center justify-center mt-24">
           <p className="md:text-center text-center tracking-widest font-lora text-[#ceb475] uppercase p-4 text-sm lg:text-lg font-extralight justify-center  lg:max-w-[50%] items-center ">
-            We are always ready to help you. There are many ways to contact us.{" "}
-            <br /> You may drop us a line, give us a call or send an email,
-            <br /> choose what suits you the most.
+            We are always ready to help you. The <br /> You may drop us a line,
+            give us a call or send an email.
           </p>
         </div>
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-8 items-center  justify-center lg:mx-8 ">
