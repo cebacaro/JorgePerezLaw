@@ -1,14 +1,18 @@
 {
-    "editor.inlineSuggest.showToolbar": "always",
-    "liveServer.settings.port": 3001,
-    "cSpell.words": [
-        "CHALMETTE",
-        "extralight",
-        "HULLEN",
-        "KENNER",
-        "lato",
-        "nextui",
-        "opensans",
-        "raleway"
-    ]
+  "editor.inlineSuggest.showToolbar": "always",
+  "liveServer.settings.port": 3001,
+  "cSpell.words": [
+    "CHALMETTE",
+    "clsx",
+    "extralight",
+    "hookform",
+    "HULLEN",
+    "KENNER",
+    "lato",
+    "lucide",
+    "nextui",
+    "opensans",
+    "raleway",
+    "tailwindcss"
+  ]
 }
