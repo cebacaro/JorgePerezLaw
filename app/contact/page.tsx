@@ -102,7 +102,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="contact flex items-center justify-center w-full lg:w-[50vw]"
+      className="contact flex min-h-screen items-center justify-center w-full lg:w-[50vw]"
     >
       <div className="bg-transparent p-2 border shadow-md shadow-[#ceb475]/50 rounded-md max-w-md z-10 w-full ">
         {showMessage ? (
@@ -210,13 +210,13 @@ const Page = () => {
         </div>
 
         {/* Flex container to place the cards on the left and the form on the right */}
-        <div className="flex flex-col lg:flex-row w-full justify-center items-center px-8 mt-8 lg:mt-0 ">
+        <div className="flex flex-col lg:flex-row w-full min-h-screen justify-center items-center px-8 mt-8 lg:mt-0 ">
           {/* Cards on the left */}
-          <div className="flex flex-col items-center gap-4 lg:gap-8 lg:w-1/2 ">
+          <div className="flex flex-col  items-center gap-4 lg:gap-8 lg:w-1/2 ">
             {cards.map((card, index) => (
               <Card
                 key={index}
-                className="flex flex-col lg:w-[30vw] justify-between text-sm items-center bg-opacity-0 border shadow-md shadow-[#ceb475]/50 rounded p-4 lg:h-44 w-full text-justify"
+                className="flex flex-col lg:w-[30vw] justify-between text-sm items-center bg-opacity-0 border shadow-md shadow-[#ceb475]/50 rounded p-4 lg:h-46 w-full text-justify"
               >
                 <CardHeader className="flex justify-center items-center w-full lg:text-2xl md:text-lg text-gray-300">
                   <h1>{card.title}</h1>
@@ -231,7 +231,7 @@ const Page = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button className="bg-[#ceb475]/35 w-auto h-8">
+                    <Button className="bg-[#ceb475]/35 w-auto h-6">
                       {card.footer}
                     </Button>
                   </Link>

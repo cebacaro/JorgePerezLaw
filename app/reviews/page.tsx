@@ -42,7 +42,7 @@ const Page = () => {
     return stars;
   };
   return (
-    <div className="relative w-full min-h-screen overflow-hidden flex justify-center mt-[-65px]">
+    <div className="relative w-full min-h-screen overflow-hidden flex justify-center">
       <Image
         src="/attorney.jpg"
         alt="Attorney"

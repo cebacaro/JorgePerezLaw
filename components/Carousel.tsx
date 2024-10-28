@@ -71,8 +71,8 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="carousel h-full w-full relative">
-      <div className="list ">
+    <div className="w-full">
+      <div className="list min-h-screen">
         <AnimatePresence initial={false} mode="wait">
           {carouselItems.length > 0 && (
             <motion.div

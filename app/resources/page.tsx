@@ -30,8 +30,8 @@ const cards = [
 
 const Page = () => {
   return (
-    <div className="relative w-full h-screen flex justify-center items-center  mt-8">
-      <div className="flex flex-col  lg:gap-4 items-center justify-center gap-4 w-full absolute top-0">
+    <div className="relative w-full min-h-screen flex justify-center items-center  mt-8">
+      <div className="flex flex-col min-h-screen lg:gap-4 items-center justify-center gap-4 w-full absolute top-0">
         <h1 className="text-4xl font-lora font-normal lg:tracking-wider text-[#ceb475] lg:m-4 m-4">
           USEFUL RESOURCES{" "}
         </h1>

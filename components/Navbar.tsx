@@ -2,13 +2,10 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Menu } from "lucide-react";
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,36 +16,38 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="flex justify-between items-center px-4 w-full ">
+      <header className="flex justify-between items-center px-4 w-full">
         <div className="flex w-screen justify-between">
           <div className="justify-center items-center py-1 flex-1 m-2">
-            <a href="#home" id="logoLink" className="block h-auto w-auto ">
+            <Link href="/" id="logoLink" className="block h-auto w-auto">
               <Image src="/logo.png" alt="logo" width={60} height={60} />
-            </a>
+            </Link>
           </div>
-          <div className="flex justify-end items-center  ml-0">
+          <div className="flex justify-end items-center ml-0">
             <div className="hidden md:block mr-4">
               <Button variant="ghost" asChild>
-                <Link href="#home">Home</Link>
+                <Link href="/">Home</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="#services">Practice Areas</Link>
+                <Link href="/services">Practice Areas</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="#about">About Us</Link>
+                <Link href="/about">About Us</Link>
+              </Button>
+              {/* <Button variant="ghost" asChild>
+                <Link href="/team">Our Team</Link>
+              </Button> */}
+              <Button variant="ghost" asChild>
+                <Link href="/attorney">Attorney</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="#attorney">Attorney</Link>
+                <Link href="/resources">Resources</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="#resources">Resources</Link>
-              </Button>
-
-              <Button variant="ghost" asChild>
-                <Link href="#contact">Contact Us</Link>
+                <Link href="/contact">Contact Us</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="#reviews">Reviews</Link>
+                <Link href="/reviews">Reviews</Link>
               </Button>
             </div>
             <button
@@ -71,25 +70,28 @@ const Navbar = () => {
       >
         <nav className="flex flex-col items-center justify-start mt-8 h-full space-y-6">
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#home">Home</Link>
+            <Link href="/">Home</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#services">Practice Areas</Link>
+            <Link href="/services">Practice Areas</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#about">About Us</Link>
+            <Link href="/about">About Us</Link>
+          </Button>
+          {/* <Button variant="ghost" asChild onClick={toggleMenu}>
+            <Link href="/team">Our Team</Link>
+          </Button> */}
+          <Button variant="ghost" asChild onClick={toggleMenu}>
+            <Link href="/attorney">Attorney</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#attorney">Attorney</Link>
+            <Link href="/resources">Resources</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#resources">Resources</Link>
+            <Link href="/contact">Contact Us</Link>
           </Button>
           <Button variant="ghost" asChild onClick={toggleMenu}>
-            <Link href="#contact">Contact Us</Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <Link href="#reviews">Reviews</Link>
+            <Link href="/reviews">Reviews</Link>
           </Button>
         </nav>
       </div>

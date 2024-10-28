@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden flex justify-center mt-[-65px]">
+    <div className="relative w-full h-screen overflow-hidden flex justify-center ">
       <Image
         src={image}
         alt="bg"
