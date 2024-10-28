@@ -135,7 +135,7 @@ const PrivacyPolicy: React.FC = () => {
             reach us at:
           </p>
           <p className="text-lg m-4">
-            Jorge Perez Law Firm, LLC <br /> Email: cbacaro@jorgeperezlaw.com{" "}
+            Jorge Perez Law Firm, LLC <br /> Email: jorge@jorgeperezlaw.com{" "}
             <br />
             Phone: (504) 315-2667
           </p>
