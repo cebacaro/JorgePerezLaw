@@ -35,8 +35,9 @@ export default function Home() {
           </h1>
           <p className="font-raleway font-light lg:text-2xl text-white text-center lg:text-left lg:w-[40%]">
             Jorge Perez Law Firm, LLC is a law firm based in New Orleans metro
-            area, LA with an emphasis in Personal Injury and Accidents, Civil
-            and Commercial Litigation, Immigration Defense, and Taxation.
+            area, LA with an emphasis in Personal Injury and Accidents,
+            Immigration and Removal Defense, Civil and Commercial Litigation,
+            and Taxation.
           </p>
         </div>
       </section>

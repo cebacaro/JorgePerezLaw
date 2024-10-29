@@ -8,7 +8,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="flex mt-4 flex-col items-center">
-      <h1>&#169; Copyrights Jorge Perez Law Firm LLC</h1>
+      <h1>&#169; Copyrights Jorge Perez Law Firm, LLC</h1>
       <div className="flex flex-row m-4 items-center h-auto gap-4">
         <a
           href="https://www.facebook.com/JorgePerezAttorney"

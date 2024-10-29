@@ -23,7 +23,13 @@ import { Button } from "@nextui-org/react";
 
 const cards = [
   {
-    title: "3500 N. HULLEN ST. METAIRIE LA",
+    title: (
+      <>
+        3500 N. HULLEN ST. METAIRIE LA
+        <br />
+        70002
+      </>
+    ),
     link: "https://www.google.com/maps/place/3500+N+Hullen+St,+Metairie,+LA+70002/@30.0122621,-90.1581338,17z/data=!3m1!4b1!4m6!3m5!1s0x8620b00904230b7d:0x474b499b134c88bb!8m2!3d30.0122621!4d-90.1581338!16s%2Fg%2F11cs8vm8_d?entry=ttu",
     description: (
       <>
@@ -35,7 +41,13 @@ const cards = [
     footer: "Directions",
   },
   {
-    title: "3901 WILLIAMS BLVD. STE 7, KENNER, LA 70065",
+    title: (
+      <>
+        3901 WILLIAMS BLVD. STE 7, KENNER, LA
+        <br />
+        70065
+      </>
+    ),
     link: "https://www.google.com/maps/place/3901+Williams+Blvd+STE+7,+Kenner,+LA+70065/@30.0272239,-90.2389749,17z/data=!3m1!4b1!4m6!3m5!1s0x8620b6dc0c32ad89:0x6b91cbe24481ce5!8m2!3d30.0272239!4d-90.2389749!16s%2Fg%2F11hbvz8zw_?entry=ttu",
     description: (
       <>
