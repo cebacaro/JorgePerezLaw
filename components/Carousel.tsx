@@ -12,7 +12,7 @@ const carouselItems = [
   {
     imgSrc: img4,
     alt: "carousel",
-    title: "PERSONAL ",
+    title: "PERSONAL",
     topic: "INJURY",
     description:
       "Our firm provides compassionate and assertive representation for victims of personal injury and accidents. We fight tirelessly to ensure our clients receive the justice and maximum compensation they deserve, guiding them through every step of the legal process.",
@@ -40,7 +40,7 @@ const carouselItems = [
     imgSrc: img3BW,
     alt: "carousel",
     title: "TAXATION",
-    topic: "BUSSINES & PERSONAL",
+    topic: "BUSINESS & PERSONAL",
     description:
       "Our firm offers expert legal advice on all taxation matters, from compliance to dispute resolution. We work closely with clients to optimize their tax strategies, ensuring they meet their obligations while maximizing financial efficiency.",
     priority: false,
@@ -71,8 +71,8 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="w-full">
-      <div className="list min-h-screen">
+    <div className="carousel w-full h-screen overflow-hidden relative">
+      <div className="list h-full">
         <AnimatePresence initial={false} mode="wait">
           {carouselItems.length > 0 && (
             <motion.div
@@ -81,8 +81,8 @@ const Page = () => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, y: -50, filter: "blur(20px)" }}
               transition={{ duration: 0.3, delay: 0.2 }}
-              className="item easy-in"
-              style={{ position: "absolute", inset: "0 0 0 0" }}
+              className="item ease-in h-full relative"
+              style={{ position: "absolute", inset: 0 }}
             >
               <Image
                 src={carouselItems[currentIndex].imgSrc}
@@ -96,7 +96,7 @@ const Page = () => {
                 className="z-0"
               />
               <div className="absolute inset-0 bg-black/25 z-10"></div>
-              <div className="content lg:p-0 text-[10px] lg:text-lg text-left lg:mx-0 z-20  ">
+              <div className="content lg:p-0 text-[10px] lg:text-lg text-left lg:mx-0 z-20 absolute bottom-8 left-8">
                 <div className="title text-sm lg:text-3xl font-bold text-gray-300">
                   {carouselItems[currentIndex].title}
                 </div>
